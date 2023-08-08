@@ -144,19 +144,19 @@ Se aparecer **Switch to the new database creation flow* (alternar para o novo fl
 
 Isso desativará os backups, o que normalmente não é recomendado, mas agilizará a implantação do banco de dados para este laboratório.
 
-**(d)** Deixe tudo como está, e clique no botão laranja **Criar banco de dados**. Seu banco de dados agora será executado.
+**(g)** Deixe tudo como está, e clique no botão laranja **Criar banco de dados**. Seu banco de dados agora será executado.
 
 Parece que nada aconteceu, mas se você subir sua tela até o top, verá uma faixa verde indicando sucesso na sua criação do banco de dados AWS RDS.
 
 Se você receber um erro que menciona **"not authorized to perform: iam:CreateRole"** (não autorizado a executar: iam:CreateRole), desmarque **Enable Enhanced monitoring** (Habilitar monitoramento aprimorado) na etapa anterior.
 
-**(e)** Clique em **lab-db** (clique no próprio link).
+**(h)** Clique em **lab-db** (clique no próprio link).
 
 Agora você precisará aguardar aproximadamente 4 minutos para que o banco de dados esteja disponível. O processo está implantando um banco de dados em duas zonas de disponibilidade diferentes.
 
 Aguarde até **Info** mudar para **Modifying** (Modificando) ou **Available** (Disponível).
 
-**(d)** Role para baixo até a seção **Connectivity & security** e copie o campo **Endpoint**. Ele será semelhante a: **lab-db.cggq8lhnxvnv.us-west-2.rds.amazonaws.com**
+**(i)** Role para baixo até a seção **Connectivity & security** e copie o campo **Endpoint**. Ele será semelhante a: **lab-db.cggq8lhnxvnv.us-west-2.rds.amazonaws.com**
 
 Cole o valor do endpoint em um editor de texto. Você o usará mais tarde no laboratório.
  
