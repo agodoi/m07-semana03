@@ -20,4 +20,10 @@ Executar uma instância de banco de dados do Amazon RDS com alta disponibilidade
 Configurar a instância de banco de dados para permitir conexões do seu servidor web.
 Abrir um aplicativo web e interagir com seu banco de dados.
 
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png">
+   <img alt="Região e Zonas AWS" src="[YOUR-DEFAULT-IMAGE](https://docs.aws.amazon.com/pt_br/AmazonRDS/latest/UserGuide/images/Con-AZ-Local.png)">
+</picture>
+
 https://github.com/agodoi/EC2-RDS/upload/main/imgs
