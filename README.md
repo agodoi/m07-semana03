@@ -34,7 +34,7 @@ Depois de concluir este laboratório, você será capaz de:
 
 ## Mas antes de começar, pense! Por que o primeiro passo é criar um grupo de segurança?
 
-[resposta1](https://github.com/agodoi/EC2-RDS/blob/main/respostas)
+[resposta](https://github.com/agodoi/EC2-RDS/blob/main/respostas)
 
 
 **(a)** Dentro do console AWS já logado na sua conta de estudante, pesquise por **VPC** (Virtual Private Cloud) no campo **Pesquisar**.
