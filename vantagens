@@ -1,10 +1,11 @@
-**- Provisionamento e Configuração Simplificados:** Com o AWS RDS, o processo de provisionamento e configuração de um banco de dados é automatizado. Isso elimina a necessidade de configurar manualmente servidores, instalações de banco de dados e outros componentes, poupando um tempo considerável.
+PROVISIONAMENTO E CONFIGURAÇÃO SIMPLIFICADA: o processo de provisionamento e configuração de um BD (banco de dados) é automatizado. 
+Isso elimina a necessidade de configurar manualmente servidores, instalações de banco de dados e outros componentes, poupando um tempo considerável.
 
-**- Backup e Recuperação Automatizados:** O RDS oferece funcionalidades de backup automáticas e recuperação ponto no tempo. Os desenvolvedores não precisam se preocupar com a execução de backups ou gerenciamento de log de transações. Isso facilita a restauração de dados em caso de falhas.
+BACKUP E RECUPERAÇÃO AUTOMATIZADOS: O RDS oferece funcionalidades de backup automáticas e recuperação ponto no tempo. Os desenvolvedores não precisam se preocupar com a execução de backups ou gerenciamento de log de transações. Isso facilita a restauração de dados em caso de falhas.
 
-- Atualizações e Manutenções Gerenciadas: O AWS RDS lida com atualizações de software e manutenções regulares. Ele permite que os desenvolvedores apliquem patches de segurança e atualizações de versão com facilidade, sem interrupções significativas.
+ATUALIZAÇÕES E MANUTENÇÕES GERENCIADAS: O RDS lida com atualizações de software e manutenções regulares. Ele permite que os desenvolvedores apliquem patches de segurança e atualizações de versão com facilidade, sem interrupções significativas.
 
-- Escalabilidade Flexível: O RDS permite dimensionar verticalmente (aumentar o tamanho da instância) ou horizontalmente (usando réplicas de leitura) de forma conveniente. Isso ajuda a lidar com aumentos de tráfego sem exigir intervenção manual.
+ESCALABILIDADE FLEXÍVEL: O RDS permite dimensionar verticalmente (aumentar o tamanho da instância) ou horizontalmente (usando réplicas de leitura) de forma conveniente. Isso ajuda a lidar com aumentos de tráfego sem exigir intervenção manual.
 
 - Monitoramento e Métricas Integrados: O AWS RDS oferece métricas detalhadas e recursos de monitoramento, permitindo que os desenvolvedores acompanhem o desempenho do banco de dados e identifiquem problemas rapidamente.
 
