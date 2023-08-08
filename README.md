@@ -98,57 +98,55 @@ Nesta tarefa, você configurará e executará uma instância de banco de dados M
 
 As implantações Multi-AZ do Amazon RDS proporcionam disponibilidade e durabilidade melhores para instâncias de banco de dados, o que as torna a solução ideal para cargas de trabalho de banco de dados de produção. Quando você provisiona uma instância de banco de dados Multi-AZ, o Amazon RDS cria automaticamente uma instância de banco de dados principal e replica os dados de maneira síncrona para uma instância de espera em uma zona de disponibilidade (AZ) diferente.
 
-No painel de navegação esquerdo, clique em Databases (Bancos de dados).
+**Cuidado** >> RDS consome seus créditos, portanto, ao finalizar essa instrução, **suspenda-o**. Mas antes, vamos consultar o **AWS Cost Explorer**. Maiores detalhes, no final.
 
-**(a)** Clique em **Create database**.
+**(a)** No painel de navegação esquerdo, clique em **Banco de dados**.
+
+**(b)** Clique em **Criar Banco de Dados**.
 
 Se aparecer **Switch to the new database creation flow* (alternar para o novo fluxo de criação de banco de dados) na parte superior da tela, clique nele.
 
-**(b)** Selecione  **MySQL**.
+**(c)** Selecione  **MySQL**.
 
-**(c)** Em **Settings**, faça:
+**(d)** Em versão, você pode verificar que geralmente está pré-configura a penúltima versão, que é a considerada estável.
 
-**- (c.1)** DB instance identifier: lab-db
+**(e)** Em **Modelos**, escolha a versão gratuita.
 
-**- (c.2)** Master username: main
+**(f)** Em **Configurações**, faça o seguinte:
 
-**- (c.3)** Master password: lab-password
+**- (f.1)** Em **Identificador da instância de banco de dados**: digite lab-db
 
-**- (c.4)** Confirm password: lab-password
+**- (f.2)** Em **Nome do usuário principal**: admin
 
-**- (c.5)** Em DB instance size, configure:
+**- (f.3)** Em **Senha principal**: senha-lab
 
-**- (c.6)** Selecione **Burstable classes** (includes t classes) (Classes com capacidade de intermitência (incluem classes t)).
+**- (f.4)** Em **Confirmar sua senha**: senha-lab
 
-**- (c.7)** Selecione **db.t3.micro**
+**- (f.5)** Em **Configuração da instância**, deixe como **classes com capacidade de intermitência** e selecione **db.t3.micro**
 
-**- (c.8)** Em **Storage**, faça:
+**- (f.6)** Em **Armazenamento**, deixe como **SSD de uso geral (gp2)**, e em **armazenamento alocado** deixe 20 GB
 
-**- (c.9)** Storage type: General Purpose (SSD) (Uso geral (SSD))
+**- (f.7)** Em **Escalabilidade**, deixe tudo como está. Note que seu banco poderá armazenar até 1000GB .
 
-**- (c.10)** Allocated storage: 20
+**- (f.8)** Em **Conectividade**, deixe em **Não se conectar a um recurso de computação EC2**. Isso significa que você irá fazer algumas configurações manuais agora.
 
-**- (c.11)** Em Connectivity, configure:
+**- (f.9)** Em **VPC**: selecione **Lab VPC**. Pule as demais configurações até o próximo item a seguir.
 
-**- (c.12)** Virtual Private Cloud (VPC): Lab VPC
+**- (f.10)** Em **Grupos de segurança de VPC existentes**, marque **Grupo Seguranca DB** e desmarque **default**
 
-**- (c.13)** Existing VPC security groups, no menu suspenso:
+**- (f.11)** Desmarque **Habilitar monitoramento avançado** (Habilitar monitoramento aprimorado).
 
-**- (c.14)** Selecione DB Security Group.
+**- (f.12)** Expanda  **Configuração Adicional**. Mas atenção! É o Configuração Adicional logo abaixo do Monitoramento, OK?
 
-**- (c.15)** Desmarque a seleção default (padrão).
+**- (f.13)** Em **Nome do banco de dados inicial**: digite **lab**
 
-**- (c.16)** Expanda  **Additional configuration** e configure:
-
-**- (c.17)** Initial database name: **lab**
-
-**- (c.18)** Desmarque **Enable automatic backups** (Habilitar backups automáticos).
-
-**- (c.19)** Desmarque **Enable Enhanced monitoring** (Habilitar monitoramento aprimorado).
+**- (f.14)** Desmarque **Habilitar backups automatizados**.
 
 Isso desativará os backups, o que normalmente não é recomendado, mas agilizará a implantação do banco de dados para este laboratório.
 
-**(d)** Clique em **Create database**. Seu banco de dados agora será executado.
+**(d)** Deixe tudo como está, e clique no botão laranja **Criar banco de dados**. Seu banco de dados agora será executado.
+
+Parece que nada aconteceu, mas se você subir sua tela até o top, verá uma faixa verde indicando sucesso na sua criação do banco de dados AWS RDS.
 
 Se você receber um erro que menciona **"not authorized to perform: iam:CreateRole"** (não autorizado a executar: iam:CreateRole), desmarque **Enable Enhanced monitoring** (Habilitar monitoramento aprimorado) na etapa anterior.
 
