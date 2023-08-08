@@ -39,57 +39,55 @@ Depois de concluir este laboratório, você será capaz de:
 
 **(a)** Dentro do console AWS já logado na sua conta de estudante, pesquise por **VPC** (Virtual Private Cloud) no campo **Pesquisar**.
 
-**(b)** Clique em **Grupo de Segurança**
+**(b)** Clique em **Grupo de Segurança**. É provável que você já veja vários grupos criados, mas isso é devido às suas tarefas anteriores.
 
-**- (b.1)** **Security group name** (Nome do grupo de segurança): **DB Security Group** (Grupo de segurança de banco de dados)
+**- (b.1)** Clique em **Criar Grupo de Segurança** (botão laranja)
 
-**- (b.2)** **Description** (Descrição): **Permit access from Web Security Group** (Permitir acesso do grupo de segurança da Web)
+**- (b.2)** Em **Security group name**: digite **Grupo Seguranca DB** (não use ç)
 
-**- (b.3)** **VPC**: Lab VPC (VPC de laboratório)
+**- (b.3)** Em **Description**: **Permite acesso do grupo de seguranca Web** (não use ç)
 
-Agora você adicionará uma regra ao grupo de segurança para permitir solicitações de entrada do banco de dados.
+**- (b.4)** Em **VPC**: escolha Lab VPC
 
-**(c)** No painel **Inbound rules** (Regras de entrada), selecione **Add rule** (Adicionar regra).
+Na mesma tela (não saiu daquela tela) você adicionará uma regra ao grupo de segurança para permitir solicitações de entrada do banco de dados.
 
-No momento, o grupo de segurança não tem regras. Você adicionará uma regra para permitir acesso pelo Web Security Group (Grupo de segurança da Web).
+**(c)** No painel **Regras de Entrada** (Inbound rules), ele deve estar vazio. Nessa etapa, vamos adicionar uma regra para permitir acesso pelo **Grupo de segurança da Web**. Defina as seguintes configurações:
 
-**(d)** Defina as seguintes configurações:
+**- (c.1)** Em **Tipo**: MySQL/Aurora (3306)
 
-**- (d.1)** **Type**: MySQL/Aurora (3306)
+**- (c.2)** Em **Origem**: deixa personalizado, e na lupinha,  pegue a opção **Web Security Group | sg- nº IP**
 
-**- (d.2)** **CIDR**, **IP**, **Security Group or Prefix List** (CIDR, IP, grupo de segurança ou lista de prefixos): digite **sg** e selecione Web Security Group (Grupo de segurança da Web)
+**- (c.3)** Em **Descrição**: digite "MinhaEntrada"
 
 Isso configura o grupo de segurança de banco de dados para permitir tráfego de entrada na porta 3306 de qualquer instância do EC2 associada ao Web Security Group (Grupo de segurança da Web).
 
-**(e)** Selecione **Create security group**.
+**- (c.4)** Pula a parte **Regras de saída**.
+
+**- (c.5)** Clique em **Criar grupo de segurança**.
 
 Você usará esse grupo de segurança ao executar o banco de dados do Amazon RDS.
 
 # Passo 02 - Criar um grupo de sub-redes de banco de dados
 
-Nesta tarefa, você criará um grupo de sub-redes de banco de dados, que é usado para informar ao RDS quais sub-redes podem ser usadas com o banco de dados. 
+Nesta tarefa, você criará um grupo de sub-redes de banco de dados, que é usado para informar ao RDS quais sub-redes podem ser usadas com o banco de dados. Volte na arquitetura (desenho inicial daqui dessa instrução) para entender onde vão as sub-redes. Cada grupo de sub-redes de banco de dados requer sub-redes em pelo menos duas zonas de disponibilidade (de novo, observe a arquitetura inicial, que há 2 zonas A e B).
 
-Cada grupo de sub-redes de banco de dados requer sub-redes em pelo menos duas zonas de disponibilidade.
+**(a)** No menu **Serviços** do console AWS, digite ou clique em **RDS**.
 
-**(a)** No menu **Services**, clique em **RDS**.
+**(b)** No painel de navegação esquerdo vertical, clique em **Grupos de sub-redes**.
 
-**(b)** No painel de navegação esquerdo, clique em **Grupos de sub-redes**.
+**(c)** Clique no botão laranja **Criar grupo de sub-redes de banco de dados** (ou Create DB Subnet Group) e configure:
 
-**(c)** Clique em **Create DB Subnet Group** e configure:
+**- (c.1)** Nome: **Grupo-Subrede-DB**
 
-**- (c.1)** Name: **DB-Subnet-Group**
-
-**- (c.2)** Description: **Grupo de sub-redes de banco de dados**
+**- (c.2)** Descrição: **Grupo de sub-redes de banco de dados**
 
 **- (c.3)** VPC: **Lab VPC**
 
-**(d)** Role para baixo até a seção Adicionar sub-redes.
+**- (c.4)** Em **Adicionar sub-redes**, expanda a lista de valores em **Zonas de disponibilidade** e selecione as duas primeiras zonas: **us-east-1a** e **us-east-1b**. Note que a AWS permite disponibilizar até 6 zonas distintas do seu banco de dados. Isso vai de encontro com a alta disponibilidade do seu banco de dados. 
 
-**(e)** Expanda a lista de valores em **Zonas de disponibilidade** e selecione as duas primeiras zonas: **us-east-1a** e **us-east-1b**.
+**- (c.5)** Expanda a lista de valores em **Sub-redes** e selecione as sub-redes associadas aos intervalos de CIDR **10.0.1.0/24** para us-east-1a e **10.0.3.0/24** para us-east-1b. Essas sub-redes devem agora ser mostradas na tabela Sub-redes logo abaixo aí do seu console.
 
-**(f)** Expanda a lista de valores em **Sub-redes** e selecione as sub-redes associadas aos intervalos de CIDR **10.0.1.0/24** e **10.0.3.0/24**. Essas sub-redes devem agora ser mostradas na tabela Sub-redes selecionadas.
-
-**(g)** Clique em **Create**.
+**- (c.6)** Clique no botão laranja **Criar**.
 
 Você usará esse grupo de sub-redes de banco de dados ao criar o banco de dados na próxima tarefa.
 
