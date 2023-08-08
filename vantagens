@@ -1,6 +1,6 @@
-- Provisionamento e Configuração Simplificados: Com o AWS RDS, o processo de provisionamento e configuração de um banco de dados é automatizado. Isso elimina a necessidade de configurar manualmente servidores, instalações de banco de dados e outros componentes, poupando um tempo considerável.
+**- Provisionamento e Configuração Simplificados:** Com o AWS RDS, o processo de provisionamento e configuração de um banco de dados é automatizado. Isso elimina a necessidade de configurar manualmente servidores, instalações de banco de dados e outros componentes, poupando um tempo considerável.
 
-- Backup e Recuperação Automatizados: O RDS oferece funcionalidades de backup automáticas e recuperação ponto no tempo. Os desenvolvedores não precisam se preocupar com a execução de backups ou gerenciamento de log de transações. Isso facilita a restauração de dados em caso de falhas.
+**- Backup e Recuperação Automatizados:** O RDS oferece funcionalidades de backup automáticas e recuperação ponto no tempo. Os desenvolvedores não precisam se preocupar com a execução de backups ou gerenciamento de log de transações. Isso facilita a restauração de dados em caso de falhas.
 
 - Atualizações e Manutenções Gerenciadas: O AWS RDS lida com atualizações de software e manutenções regulares. Ele permite que os desenvolvedores apliquem patches de segurança e atualizações de versão com facilidade, sem interrupções significativas.
 
