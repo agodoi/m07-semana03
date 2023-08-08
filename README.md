@@ -6,7 +6,7 @@ Criação de RDS MySQL
 
 Iremos apresentar os métodos para modelagem de banco de dados relacional, e para isso, este laboratório foi criado para reforçar o conceito de utilização de uma instância de banco de dados gerenciado pela AWS para atender as necessidades de banco de dados relacional.
 
-O Amazon Relational Database Service (Amazon RDS) facilita a configuração, a operação e o escalamento de um banco de dados relacional na nuvem. Ele oferece capacidade econômica e redimensionável enquanto gerencia tarefas demoradas de administração de banco de dados, permitindo que você se concentre nas suas aplicações e nos seus negócios. O Amazon RDS fornece seis opções de mecanismos de banco de dados familiares: Amazon Aurora, Oracle, Microsoft SQL Server, PostgreSQL, MySQL e MariaDB. Mas hoje, vamos focar no **MySQL**
+O Amazon Relational Database Service (Amazon RDS) facilita a configuração, a operação e o escalamento de um banco de dados relacional na nuvem. Ele oferece capacidade econômica e redimensionável enquanto gerencia [tarefas demoradas](https://github.com/agodoi/EC2-RDS/blob/main/vantagens) de administração de banco de dados , permitindo que você se concentre nas suas aplicações e nos seus negócios. O Amazon RDS fornece seis opções de mecanismos de banco de dados familiares: Amazon Aurora, Oracle, Microsoft SQL Server, PostgreSQL, MySQL e MariaDB. Mas hoje, vamos focar no **MySQL**
 
 # Objetivos
 
