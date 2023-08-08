@@ -32,6 +32,9 @@ Depois de concluir este laboratório, você será capaz de:
 
 # Passo-01: Criar um grupo de segurança no RDS
 
+## Mas antes de começar, pense! Por que o primeiro passo é criar um grupo de segurança?
+
+
 **(a)** Dentro do console AWS já logado na sua conta de estudante, pesquise por **VPC** (Virtual Private Cloud) no campo **Pesquisar**.
 
 **(b)** Clique em **Grupo de Segurança**
