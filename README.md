@@ -18,8 +18,9 @@ Depois de concluir este laboratório, você será capaz de:
 
 # Pré-requisitos
 
-* Você precisa entrar no curso AWS Academy Foundation, ir no módulo 8 e subir o **Laboratório 5 - Crie um servidor de banco de dados e interaja com o banco de dados usando um aplicativo**
-* Não use o seu Leaner Lab porque ele não estará com as pré-configurações necessárias.
+* Você precisa entrar no curso AWS Academy Foundation, ir até o Módulo 8 e subir o **Laboratório 5 - Crie um servidor de banco de dados e interaja com o banco de dados usando um aplicativo**. Espera aparecer **Lab Status: ready** para abrir o console AWS. Você abre o console clicando no botão **AWS**.
+  
+* Não use o seu Leaner Lab porque ele não estará com as pré-configurações necessárias. Depois a gente vai falar mais sobre isso.
 
 # Arquitetura inicial
 
@@ -37,6 +38,7 @@ Depois de concluir este laboratório, você será capaz de:
 
 # Passo-01: Criar um grupo de segurança no RDS
 
+## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8.
 ## Mas antes de começar, pense! Por que o primeiro passo é criar um grupo de segurança?
 
 [resposta](https://github.com/agodoi/EC2-RDS/blob/main/resposta1)
@@ -73,6 +75,7 @@ Isso configura o grupo de segurança de banco de dados para permitir tráfego de
 Você usará esse grupo de segurança ao executar o banco de dados do Amazon RDS.
 
 # Passo 02 - Criar um grupo de sub-redes de banco de dados
+## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8.
 
 Nesta tarefa, você criará um grupo de sub-redes de banco de dados, que é usado para informar ao RDS quais sub-redes podem ser usadas com o banco de dados. Volte na arquitetura (desenho inicial daqui dessa instrução) para entender onde vão as sub-redes. Cada grupo de sub-redes de banco de dados requer sub-redes em pelo menos duas zonas de disponibilidade (de novo, observe a arquitetura inicial, que há 2 zonas A e B).
 
@@ -98,8 +101,7 @@ Você usará esse grupo de sub-redes de banco de dados ao criar o banco de dados
 
 
 # Passo 03: Criar uma instância de banco de dados do Amazon RDS
-
-## Atenção: essa etapa será perdida ao encerrar sua sessão no console
+## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8.
 
 Nesta tarefa, você configurará e executará uma instância de banco de dados Multi-AZ do Amazon RDS for MySQL.
 
@@ -169,6 +171,7 @@ Cole o valor do endpoint em um editor de texto. Você o usará mais tarde no lab
  
 
 # Passo-04: Interagir com seu banco de dados
+## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8.
 
 Nesta tarefa, você abrirá uma aplicação Web em execução no servidor da Web e o configurará para usar o banco de dados.
 
@@ -201,4 +204,4 @@ Os dados estão sendo mantidos no banco de dados e são replicados automaticamen
 Parabéns! Você concluiu o laboratório.
 
 # Desafio para casa:
-## Faça uma investigação das pré-configurações do EC2, VPC, IAM e subredes que estão sendo usadas nesse instrução, pois o AWS já deixou isso preparado para você antes de começar o lab.
+## Faça uma investigação das pré-configurações do Grupo de Segurança, EC2, VPC, IAM e subredes que estão sendo usadas nesse instrução, pois o AWS já deixou isso preparado para você antes de começar o lab.
