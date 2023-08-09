@@ -16,6 +16,11 @@ Depois de concluir este laboratório, você será capaz de:
 * Configurar a instância de banco de dados para permitir conexões do seu servidor web.
 * Abrir um aplicativo web e interagir com seu banco de dados.
 
+# Pré-requisitos
+
+* Você precisa entrar no curso AWS Academy Foundation, ir no módulo 8 e subir o **Laboratório 5 - Crie um servidor de banco de dados e interaja com o banco de dados usando um aplicativo**
+* Não use o seu Leaner Lab porque ele não estará com as pré-configurações necessárias.
+
 # Arquitetura inicial
 
 <picture>
@@ -41,17 +46,17 @@ Depois de concluir este laboratório, você será capaz de:
 
 **(b)** Clique em **Grupo de Segurança**. É provável que você já veja vários grupos criados, mas isso é devido às suas tarefas anteriores.
 
-**- (b.1)** Clique em **Criar Grupo de Segurança** (botão laranja)
+**- (b.1)** Clique em **Criar grupo de segurança** (botão laranja)
 
-**- (b.2)** Em **Security group name**: digite **Grupo Seguranca DB** (não use ç)
+**- (b.2)** Em **Nome do grupo de segurança**: digite **Grupo Seguranca DB** (não use ç)
 
-**- (b.3)** Em **Description**: **Permite acesso do grupo de seguranca Web** (não use ç)
+**- (b.3)** Em **Descrição**: **Permite acesso do grupo de seguranca Web** (não use ç)
 
-**- (b.4)** Em **VPC**: escolha Lab VPC
+**- (b.4)** Em **VPC**: escolha Lab VPC. Mas se não tiver essa opção, clique na única opção que existir.
 
-Na mesma tela (não saiu daquela tela) você adicionará uma regra ao grupo de segurança para permitir solicitações de entrada do banco de dados.
+Na mesma tela (não saia daquela tela) você adicionará uma regra ao grupo de segurança para permitir solicitações de entrada do banco de dados.
 
-**(c)** No painel **Regras de Entrada** (Inbound rules), ele deve estar vazio. Nessa etapa, vamos adicionar uma regra para permitir acesso pelo **Grupo de segurança da Web**. Defina as seguintes configurações:
+**(c)** Logo abaixo, tem **Regras de entrada**, e ele deve estar vazio. Nessa etapa, clique em **Adicionar regra** para adicionar uma regra para permitir acesso pelo **Grupo de segurança da Web**. Defina as seguintes configurações:
 
 **- (c.1)** Em **Tipo**: MySQL/Aurora (3306)
 
@@ -93,6 +98,8 @@ Você usará esse grupo de sub-redes de banco de dados ao criar o banco de dados
 
 
 # Passo 03: Criar uma instância de banco de dados do Amazon RDS
+
+## Atenção: essa etapa será perdida ao encerrar sua sessão no console
 
 Nesta tarefa, você configurará e executará uma instância de banco de dados Multi-AZ do Amazon RDS for MySQL.
 
@@ -192,3 +199,6 @@ Os dados estão sendo mantidos no banco de dados e são replicados automaticamen
 
 # Laboratório concluído
 Parabéns! Você concluiu o laboratório.
+
+# Desafio para casa:
+## Faça uma investigação das pré-configurações do EC2, VPC, IAM e subredes que estão sendo usadas nesse instrução, pois o AWS já deixou isso preparado para você antes de começar o lab.
