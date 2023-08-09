@@ -133,9 +133,9 @@ Se aparecer esse alerta *Switch to the new database creation flow* (alternar par
 
 **- (g.2)** Em **Nome do usuário principal**: digite **admin**
 
-**- (g.3)** Em **Senha principal**: senha-lab
+**- (g.3)** Em **Senha principal**: digite **lab12345**
 
-**- (g.4)** Em **Confirmar sua senha**: senha-lab
+**- (g.4)** Em **Confirmar sua senha**: digite **lab12345**
 
 **- (g.5)** Em **Configuração da instância**, deixe como **classes com capacidade de intermitência (inclui classes t)** e selecione **db.t3.micro**
 
@@ -183,24 +183,24 @@ Nesta tarefa, você abrirá uma aplicação Web em execução no servidor da Web
 
 **(a)** Você precisa pegar o endereço IP do WebServer já pré-criado pela AWS. Para isso, clique no botão suspenso **Details** na sua tela onde começou o Lab Módulo 8 e, em seguida, clique em **Show**. Você vai ver um IP do tipo: 52.55.160.157, mas não será esse, obviamente!
 
-**(b)** Abra uma nova guia do navegador Web, cole o endereço IP de WebServer [enter]. A aplicação Web será exibida com informações sobre a instância do EC2. Se sua rede local bloquear essa etapa, roteie o sinal WiFi do seu celular para ver se resolve.
+**(b)** Abra uma nova guia do navegador Web, cole o endereço IP de WebServer [enter]. A aplicação Web será exibida com informações sobre a instância do EC2 (figura a seguir). Se sua rede local bloquear essa etapa, roteie o sinal WiFi do seu celular para resolver e fique tranquilo que seu laboratório não será encerrado, desde que você não atualize nenhuma página enquanto chaveia o seu WiFi para o seu celular.
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RDS/blob/main/imgs/telafinal.png">
    <img alt="Aplicação Final" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/telafinal.png)">
 </picture>
 
-**(c)** Clique no link RDS na parte superior da página. Agora, você configurará a aplicação para se conectar ao banco de dados. Defina as seguintes configurações:
+**(c)** Clique no botão RDS da aplicação (na parte superior da página). Agora, você configurará a aplicação para se conectar ao banco de dados. Defina as seguintes configurações:
 
-**- (c.1):** Endpoint: cole o endpoint que você copiou em um editor de texto anteriormente
+**- (c.1):** Endpoint: cole o endpoint que você copiou em um editor de texto anteriormente (Passo-03 etapa (i))
 
-**- (c.2):** Database: **lab**
+**- (c.2):** Database: **lab** (nome que você deu no Passo-03 etapa g.13)
 
-**- (c.3):** Username: **main**
+**- (c.3):** Username: **admin** (nome que você deu no Passo-03 etapa g.2)
 
-**- (c.4):** Password: **lab-password**
+**- (c.4):** Password: **lab12345** (senha que você deu no Passo-03 etapa g.3)
 
-**- (c.5):** Clique em **Submit** (Enviar)
+**- (c.5):** Clique no botão **Submit**
 
 Uma mensagem será exibida explicando que a aplicação está executando um comando para copiar informações para o banco de dados. Após alguns segundos, a aplicação exibirá um [Address Book] (Catálogo de endereços).
 
