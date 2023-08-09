@@ -101,7 +101,7 @@ Nesta tarefa, você criará um grupo de sub-redes de banco de dados, que é usad
 
 Você usará esse grupo de sub-redes de banco de dados ao criar o banco de dados na próxima tarefa.
 
-## Calma, fião! Repense sobre o que você acabou de fazer!
+## Calma! Repense sobre o que você acabou de fazer!
 
 Nesta tarefa, você criou um grupo de sub-redes de banco de dados, que é usado para informar ao RDS quais sub-redes podem ser usadas com o banco de dados. Volte na arquitetura (desenho inicial daqui dessa instrução) para entender onde vão as sub-redes. Cada grupo de sub-redes de banco de dados requer sub-redes em pelo menos duas zonas de disponibilidade e na arquitetura inicial, há 2 zonas A e B. Mas por que 2 zonas? A resposta virá logo a seguir...
 
