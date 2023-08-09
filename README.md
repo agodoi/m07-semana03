@@ -227,4 +227,4 @@ Procedimentos:
 * Pesquise cada palavra-chave acima na lupa do console e tome nota em um caderno dos campos configurados e pule os campos padrões.
 * Não precisa mostrar para o professor, mas servirá para você completar o seu aprendizado.
 * Alguns acessos dentre as palavras-chave acima estarão com bloqueio de acesso devido ao grupo de segurança pré-criado. Isso serve para a gente não modificar a aplicação do servidor :(
-* O WebServer foi desenvolvido em Bootstrap pela AWS. [](https://getbootstrap.com/)
+* O WebServer foi desenvolvido em Bootstrap pela AWS. [Bootstrap](https://getbootstrap.com/)
