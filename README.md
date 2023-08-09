@@ -101,77 +101,79 @@ Você usará esse grupo de sub-redes de banco de dados ao criar o banco de dados
 
 ## Calma, fião! Repense sobre o que você acabou de fazer!
 
-Nesta tarefa, você criou um grupo de sub-redes de banco de dados, que é usado para informar ao RDS quais sub-redes podem ser usadas com o banco de dados. Volte na arquitetura (desenho inicial daqui dessa instrução) para entender onde vão as sub-redes. Cada grupo de sub-redes de banco de dados requer sub-redes em pelo menos duas zonas de disponibilidade e na arquitetura inicial, há 2 zonas A e B.
+Nesta tarefa, você criou um grupo de sub-redes de banco de dados, que é usado para informar ao RDS quais sub-redes podem ser usadas com o banco de dados. Volte na arquitetura (desenho inicial daqui dessa instrução) para entender onde vão as sub-redes. Cada grupo de sub-redes de banco de dados requer sub-redes em pelo menos duas zonas de disponibilidade e na arquitetura inicial, há 2 zonas A e B. Mas por que 2 zonas? A resposta virá logo a seguir...
 
 
 # Passo 03: Criar uma instância de banco de dados do Amazon RDS
 ## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8.
 
-Nesta tarefa, você configurará e executará uma instância de banco de dados Multi-AZ do Amazon RDS for MySQL.
+Nesta tarefa, você configurará e executará uma instância de banco de dados **Multi-AZ** do Amazon RDS for MySQL.
 
-As implantações Multi-AZ do Amazon RDS proporcionam disponibilidade e durabilidade melhores para instâncias de banco de dados, o que as torna a solução ideal para cargas de trabalho de banco de dados de produção. Quando você provisiona uma instância de banco de dados Multi-AZ, o Amazon RDS cria automaticamente uma instância de banco de dados principal e replica os dados de maneira síncrona para uma instância de espera em uma zona de disponibilidade (AZ) diferente.
+As implantações **Multi-AZ** do Amazon RDS proporcionam melhor disponibilidades e durabilidade para instâncias de banco de dados, o que as torna a solução ideal para cargas de trabalho de banco de dados de produção. Quando você provisiona uma instância de banco de dados Multi-AZ, o Amazon RDS cria automaticamente uma instância de banco de dados principal e replica os dados de maneira síncrona para uma instância de espera em uma zona de disponibilidade (AZ) diferente [isso responde a pergunta acima: Mas por que 2 zonas?, certo?
 
-**Cuidado** >> RDS consome seus créditos, portanto, ao finalizar essa instrução, **suspenda-o**. Mas antes, vamos consultar o **AWS Cost Explorer**. Maiores detalhes, no final.
+**Cuidado** >> RDS consome seus créditos, portanto, ao finalizar essa instrução, **suspenda-o** caso esteja fazendo na raça do seu Leaner Lab. E você pode consultar o **AWS Cost Explorer** para saber dos custos.
 
 **(a)** No painel de navegação esquerdo, clique em **Banco de dados**.
 
 **(b)** Clique em **Criar Banco de Dados**.
 
-Se aparecer **Switch to the new database creation flow* (alternar para o novo fluxo de criação de banco de dados) na parte superior da tela, clique nele.
+Se aparecer esse alerta *Switch to the new database creation flow* (alternar para o novo fluxo de criação de banco de dados) na parte superior da tela, ok, clique nele.
 
-**(c)** Selecione  **MySQL**.
+**(c)** Deixei em **Criação padrão** que significa que você vai criar esse banco na força do ódio... rsrsr 
 
-**(d)** Em versão, você pode verificar que geralmente está pré-configura a penúltima versão, que é a considerada estável.
+**(d)** Selecione  **MySQL**.
 
-**(e)** Em **Modelos**, escolha a versão gratuita.
+**(e)** Em **Versão do mecanismo**, você pode verificar que geralmente está pré-configura para a penúltima versão, que é a considerada estável. Deixe como está mesmo.
 
-**(f)** Em **Configurações**, faça o seguinte:
+**(f)** Em **Modelos**, escolha **Nível gratuito**.
 
-**- (f.1)** Em **Identificador da instância de banco de dados**: digite lab-db
+**(g)** Em **Configurações**, faça o seguinte:
 
-**- (f.2)** Em **Nome do usuário principal**: admin
+**- (g.1)** Em **Identificador da instância de banco de dados**: digite **lab-db**
 
-**- (f.3)** Em **Senha principal**: senha-lab
+**- (g.2)** Em **Nome do usuário principal**: digite **admin**
 
-**- (f.4)** Em **Confirmar sua senha**: senha-lab
+**- (g.3)** Em **Senha principal**: senha-lab
 
-**- (f.5)** Em **Configuração da instância**, deixe como **classes com capacidade de intermitência** e selecione **db.t3.micro**
+**- (g.4)** Em **Confirmar sua senha**: senha-lab
 
-**- (f.6)** Em **Armazenamento**, deixe como **SSD de uso geral (gp2)**, e em **armazenamento alocado** deixe 20 GB
+**- (g.5)** Em **Configuração da instância**, deixe como **classes com capacidade de intermitência (inclui classes t)** e selecione **db.t3.micro**
 
-**- (f.7)** Em **Escalabilidade**, deixe tudo como está. Note que seu banco poderá armazenar até 1000GB .
+**- (g.6)** Em **Armazenamento**, deixe como **SSD de uso geral (gp2)**, e em **armazenamento alocado** deixe **20 GB**
 
-**- (f.8)** Em **Conectividade**, deixe em **Não se conectar a um recurso de computação EC2**. Isso significa que você irá fazer algumas configurações manuais agora.
+**- (g.7)** Em **Escalabilidade**, deixe tudo como está. Note que seu banco poderá armazenar até 1000GB .
 
-**- (f.9)** Em **VPC**: selecione **Lab VPC**. Pule as demais configurações até o próximo item a seguir.
+**- (g.8)** Em **Conectividade**, deixe em **Não se conectar a um recurso de computação EC2**. Isso significa que você irá fazer algumas configurações manuais agora.
 
-**- (f.10)** Em **Grupos de segurança de VPC existentes**, marque **Grupo Seguranca DB** e desmarque **default**
+**- (g.9)** Em **Nuvem privada virtual (VPC)**: selecione **Lab VPC**. Pule as demais configurações até o próximo item a seguir.
 
-**- (f.11)** Desmarque **Habilitar monitoramento avançado** (Habilitar monitoramento aprimorado).
+**- (g.10)** Em **Grupos de segurança de VPC existentes**, marque **Grupo Seguranca DB** e desmarque **default**.
 
-**- (f.12)** Expanda  **Configuração Adicional**. Mas atenção! É o Configuração Adicional logo abaixo do Monitoramento, OK?
+**- (g.11)** Pule alguns campos até chegar no campo a seguir.
 
-**- (f.13)** Em **Nome do banco de dados inicial**: digite **lab**
+**- (g.12)** Desmarque **Habilitar monitoramento avançado** (Habilitar monitoramento aprimorado).
 
-**- (f.14)** Desmarque **Habilitar backups automatizados**.
+**- (g.13)** Expanda  **Configuração Adicional**. Mas atenção! É o Configuração Adicional logo abaixo do Monitoramento, OK?
+
+**- (g.13)** Em **Nome do banco de dados inicial**: digite **lab**. Essa opção está dando um apelido para o seu banco RDS.
+
+**- (g.14)** Desmarque **Habilitar backups automatizados**.
 
 Isso desativará os backups, o que normalmente não é recomendado, mas agilizará a implantação do banco de dados para este laboratório.
 
-**(g)** Deixe tudo como está, e clique no botão laranja **Criar banco de dados**. Seu banco de dados agora será executado.
+**(h)** Deixe tudo como está até o fim, e clique no botão laranja **Criar banco de dados**. Seu banco de dados agora será executado.
+
+Caso apareça algumas telas de configurações extras ou sugestões, ignore-as!
 
 Parece que nada aconteceu, mas se você subir sua tela até o top, verá uma faixa verde indicando sucesso na sua criação do banco de dados AWS RDS.
 
-Se você receber um erro que menciona **"not authorized to perform: iam:CreateRole"** (não autorizado a executar: iam:CreateRole), desmarque **Enable Enhanced monitoring** (Habilitar monitoramento aprimorado) na etapa anterior.
+E você verá uma faixa azul indicando que o seu banco de dados **lab-db** está sendo criado. Aguarde até 4 minutos para a conclusão, pois o processo está implantando um banco de dados em duas zonas de disponibilidade diferentes.
 
-**(h)** Clique em **lab-db** (clique no próprio link).
+Quando a faixa azul ficar verde, significa que seu banco **lab-db** está pronto.
 
-Agora você precisará aguardar aproximadamente 4 minutos para que o banco de dados esteja disponível. O processo está implantando um banco de dados em duas zonas de disponibilidade diferentes.
+**(i)** Role para baixo até a seção **Segurança e Conexão** e copie o campo **Endpoint**. Ele será semelhante a: **lab-db.css9whrgr6ve.us-east-1.rds.amazonaws.com**
 
-Aguarde até **Info** mudar para **Modifying** (Modificando) ou **Available** (Disponível).
-
-**(i)** Role para baixo até a seção **Connectivity & security** e copie o campo **Endpoint**. Ele será semelhante a: **lab-db.cggq8lhnxvnv.us-west-2.rds.amazonaws.com**
-
-Cole o valor do endpoint em um editor de texto. Você o usará mais tarde no laboratório.
+Cole o valor do endpoint em um editor de texto. Você o usará isso mais tarde aqui no laboratório.
  
 
 # Passo-04: Interagir com seu banco de dados
@@ -179,9 +181,9 @@ Cole o valor do endpoint em um editor de texto. Você o usará mais tarde no lab
 
 Nesta tarefa, você abrirá uma aplicação Web em execução no servidor da Web e o configurará para usar o banco de dados.
 
-**(a)** Para copiar o endereço IP de WebServer, clique no menu suspenso **Details** acima destas instruções e, em seguida, clique em **Show**.
+**(a)** Você precisa pegar o endereço IP do WebServer já pré-criado pela AWS. Para isso, clique no botão suspenso **Details** na sua tela onde começou o Lab Módulo 8 e, em seguida, clique em **Show**.
 
-**(b)** Abra uma nova guia do navegador Web, cole o endereço IP de WebServer [enter]. A aplicação Web será exibida com informações sobre a instância do EC2.
+**(b)** Abra uma nova guia do navegador Web, cole o endereço IP de WebServer [enter]. A aplicação Web será exibida com informações sobre a instância do EC2. Se sua rede local bloquear essa etapa, roteie o sinal WiFi do seu celular para ver se resolve.
 
 **(c)** Clique no link RDS na parte superior da página. Agora, você configurará a aplicação para se conectar ao banco de dados. Defina as seguintes configurações:
 
