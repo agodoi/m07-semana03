@@ -226,4 +226,4 @@ Parabéns! Você concluiu o laboratório.
 Procedimentos:
 * Pesquise cada palavra-chave acima na lupa do console e tome nota em um caderno dos campos configurados e pule os campos padrões.
 * Não precisa mostrar para o professor, mas servirá para você completar o seu aprendizado.
-* Alguns acessos dentre as palavras-chave acima estarão com bloqueio de acesso devido ao grupo de segurança pré-criado. Isso serve para você não modificar a aplicação do servidor.
+* Alguns acessos dentre as palavras-chave acima estarão com bloqueio de acesso devido ao grupo de segurança pré-criado. Isso serve para a gente não modificar a aplicação do servidor :(
