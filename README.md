@@ -215,4 +215,10 @@ Os dados estão sendo mantidos no banco de dados e são replicados automaticamen
 Parabéns! Você concluiu o laboratório.
 
 # Desafio para casa:
-## Faça uma investigação das pré-configurações do Grupo de Segurança chamado Web Security Group, EC2, VPC, IAM e subredes que estão sendo usadas nesse instrução, pois o AWS já deixou isso preparado para você antes de começar o lab.
+## Faça uma investigação das pré-configurações desse laboratório para entender a fundo o que aconteceu: 
+
+### * Grupo de Segurança chamado Web Security Group;
+### * EC2;
+### * VPC;
+### * IAM;
+### * Subredes
