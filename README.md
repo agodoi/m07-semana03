@@ -46,7 +46,7 @@ Depois de concluir este laboratório, você será capaz de:
 
 **(a)** Dentro do console AWS já logado na sua conta de estudante, pesquise por **VPC** (Virtual Private Cloud) no campo **Pesquisar**.
 
-**(b)** Clique em **Grupo de Segurança**. É provável que você já veja vários grupos criados, mas isso é devido às suas tarefas anteriores.
+**(b)** Clique na caixinha **Grupo de Segurança** no meio da sua tela. É provável que você já veja uma lista de grupos criados, mas isso é devido às suas tarefas anteriores e às pré-configurações (feitos pela AWS) nesse exercício.
 
 **- (b.1)** Clique em **Criar grupo de segurança** (botão laranja)
 
@@ -54,7 +54,7 @@ Depois de concluir este laboratório, você será capaz de:
 
 **- (b.3)** Em **Descrição**: **Permite acesso do grupo de seguranca Web** (não use ç)
 
-**- (b.4)** Em **VPC**: escolha Lab VPC. Mas se não tiver essa opção, clique na única opção que existir.
+**- (b.4)** Em **VPC**: escolha Lab VPC. Mas se não existir essa opção é porque você está usando o Leaner Lab e o correto é você está no Módulo 8 do curso AWS Academy Foundation.
 
 Na mesma tela (não saia daquela tela) você adicionará uma regra ao grupo de segurança para permitir solicitações de entrada do banco de dados.
 
@@ -64,13 +64,13 @@ Na mesma tela (não saia daquela tela) você adicionará uma regra ao grupo de s
 
 **- (c.2)** Em **Origem**: deixa personalizado, e na lupinha,  pegue a opção **Web Security Group | sg- nº IP**
 
-**- (c.3)** Em **Descrição**: digite "MinhaEntrada"
+**- (c.3)** Em **Descrição**: digite "MinhaEntradaWebBD"
 
 Isso configura o grupo de segurança de banco de dados para permitir tráfego de entrada na porta 3306 de qualquer instância do EC2 associada ao Web Security Group (Grupo de segurança da Web).
 
-**- (c.4)** Pula a parte **Regras de saída**.
+**- (c.4)** Pula a parte **Regras de saída** e **Tags opcionais**.
 
-**- (c.5)** Clique em **Criar grupo de segurança**.
+**- (c.5)** Clique no botão final **Criar grupo de segurança**.
 
 Você usará esse grupo de segurança ao executar o banco de dados do Amazon RDS.
 
@@ -91,13 +91,17 @@ Nesta tarefa, você criará um grupo de sub-redes de banco de dados, que é usad
 
 **- (c.3)** VPC: **Lab VPC**
 
-**- (c.4)** Em **Adicionar sub-redes**, expanda a lista de valores em **Zonas de disponibilidade** e selecione as duas primeiras zonas: **us-east-1a** e **us-east-1b**. Note que a AWS permite disponibilizar até 6 zonas distintas do seu banco de dados. Isso vai de encontro com a alta disponibilidade do seu banco de dados. 
+**- (c.4)** Em **Adicionar sub-redes**, expanda a lista de valores em **Zonas de disponibilidade** e selecione as duas primeiras zonas: **us-east-1a** e **us-east-1b**. Note que a AWS permite disponibilizar até 6 zonas distintas do seu banco de dados. Isso vai de encontro com a alta disponibilidade do seu banco de dados. Quanto mais zonas, mais caro ficará o serviço final.
 
 **- (c.5)** Expanda a lista de valores em **Sub-redes** e selecione as sub-redes associadas aos intervalos de CIDR **10.0.1.0/24** para us-east-1a e **10.0.3.0/24** para us-east-1b. Essas sub-redes devem agora ser mostradas na tabela Sub-redes logo abaixo aí do seu console.
 
 **- (c.6)** Clique no botão laranja **Criar**.
 
 Você usará esse grupo de sub-redes de banco de dados ao criar o banco de dados na próxima tarefa.
+
+## Calma, fião! Repense sobre o que você acabou de fazer!
+
+Nesta tarefa, você criou um grupo de sub-redes de banco de dados, que é usado para informar ao RDS quais sub-redes podem ser usadas com o banco de dados. Volte na arquitetura (desenho inicial daqui dessa instrução) para entender onde vão as sub-redes. Cada grupo de sub-redes de banco de dados requer sub-redes em pelo menos duas zonas de disponibilidade e na arquitetura inicial, há 2 zonas A e B.
 
 
 # Passo 03: Criar uma instância de banco de dados do Amazon RDS
@@ -204,4 +208,4 @@ Os dados estão sendo mantidos no banco de dados e são replicados automaticamen
 Parabéns! Você concluiu o laboratório.
 
 # Desafio para casa:
-## Faça uma investigação das pré-configurações do Grupo de Segurança, EC2, VPC, IAM e subredes que estão sendo usadas nesse instrução, pois o AWS já deixou isso preparado para você antes de começar o lab.
+## Faça uma investigação das pré-configurações do Grupo de Segurança chamado Web Security Group, EC2, VPC, IAM e subredes que estão sendo usadas nesse instrução, pois o AWS já deixou isso preparado para você antes de começar o lab.
