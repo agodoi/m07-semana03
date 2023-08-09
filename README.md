@@ -214,11 +214,15 @@ Os dados estão sendo mantidos no banco de dados e são replicados automaticamen
 # Laboratório concluído
 Parabéns! Você concluiu o laboratório.
 
-# Desafio para casa:
-## Faça uma investigação das pré-configurações desse laboratório para entender a fundo o que aconteceu: 
+# Desafio:
+## Faça uma investigação das pré-configurações desse laboratório para entender a fundo o que aconteceu:
 
 ### * Grupo de Segurança chamado Web Security Group;
 ### * EC2;
 ### * VPC;
 ### * IAM;
 ### * Subredes
+
+Procedimentos:
+* Pesquise cada palavra-chave acima na lupa do console e tome nota em um caderno dos campos configurados e pule os campos padrões.
+* Não precisa mostrar para o professor, mas servirá para você completar o seu aprendizado.
