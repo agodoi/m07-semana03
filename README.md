@@ -26,14 +26,14 @@ Depois de concluir este laboratório, você será capaz de:
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RDS/blob/main/imgs/lab-5-starting-lab-architecture.png">
-   <img alt="Região e Zonas AWS" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/lab-5-starting-lab-architecture.png)">
+   <img alt="Arquitetura Inicial" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/lab-5-starting-lab-architecture.png)">
 </picture>
 
 # Arquitetura final
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RDS/blob/main/imgs/lab-5-final-lab-architecture.png">
-   <img alt="Região e Zonas AWS" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/lab-5-final-lab-architecture.png)">
+   <img alt="Arquiteutura Final" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/lab-5-final-lab-architecture.png)">
 </picture>
 
 # Passo-01: Criar um grupo de segurança no RDS
@@ -181,9 +181,14 @@ Cole o valor do endpoint em um editor de texto. Você o usará isso mais tarde a
 
 Nesta tarefa, você abrirá uma aplicação Web em execução no servidor da Web e o configurará para usar o banco de dados.
 
-**(a)** Você precisa pegar o endereço IP do WebServer já pré-criado pela AWS. Para isso, clique no botão suspenso **Details** na sua tela onde começou o Lab Módulo 8 e, em seguida, clique em **Show**.
+**(a)** Você precisa pegar o endereço IP do WebServer já pré-criado pela AWS. Para isso, clique no botão suspenso **Details** na sua tela onde começou o Lab Módulo 8 e, em seguida, clique em **Show**. Você vai ver um IP do tipo: 52.55.160.157, mas não será esse, obviamente!
 
 **(b)** Abra uma nova guia do navegador Web, cole o endereço IP de WebServer [enter]. A aplicação Web será exibida com informações sobre a instância do EC2. Se sua rede local bloquear essa etapa, roteie o sinal WiFi do seu celular para ver se resolve.
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RDS/blob/main/imgs/telafinal.png">
+   <img alt="Aplicação Final" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/telafinal.png)">
+</picture>
 
 **(c)** Clique no link RDS na parte superior da página. Agora, você configurará a aplicação para se conectar ao banco de dados. Defina as seguintes configurações:
 
