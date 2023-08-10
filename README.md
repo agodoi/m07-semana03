@@ -22,7 +22,7 @@ Depois de concluir este laboratório, você será capaz de:
   
 * Não use o seu Leaner Lab porque ele não estará com as pré-configurações necessárias. Depois a gente vai falar mais sobre isso.
   
-* Sinto lhe informar, mas se demorar muito nessa atividade, a sessão vai se encerrar e todo o trabalho será perdido. Então vamos fazer uma overview primeiro antes de começar as configurações.
+* Sinto lhe informar, mas se demorar muito nessa atividade, a sessão vai se encerrar e todo o trabalho será perdido. Então vamos fazer uma overview primeiro antes de começar as configurações. Teremos 90min para concluir essa instrução antes de cair tudo.
 
 # Arquitetura inicial
 
