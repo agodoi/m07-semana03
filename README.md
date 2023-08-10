@@ -107,15 +107,19 @@ Você usará esse grupo de sub-redes de banco de dados ao criar o banco de dados
 
 Nesta tarefa, você criou um grupo de sub-redes de banco de dados, que é usado para informar ao RDS quais sub-redes podem ser usadas com o banco de dados. Volte na arquitetura (desenho inicial daqui dessa instrução) para entender onde vão as sub-redes. Cada grupo de sub-redes de banco de dados requer sub-redes em pelo menos duas zonas de disponibilidade e na arquitetura inicial, há 2 zonas A e B. Mas por que 2 zonas? A resposta virá logo a seguir...
 
+Note que o EC2 possui um grupo de segurança e o RDS, outro grupo de segurança.
+
+Importantíssimo!!! Seu RDS *não está com entrada 0.0.0.0/0* que significa qualquer um de qualquer lugar. Se você fizesse isso, seu banco de dados seria invadido em alguns minutos por alguém na Internet. Portanto seu RDS possui como regra de entrada, um endereço interno na AWS que coincide com a saída do EC2 (que já está pronto).
+
 
 # Passo 03: Criar uma instância de banco de dados do Amazon RDS
 ## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8. Fica de olho no cronômetro do laboratório.
 
-Nesta tarefa, você configurará e executará uma instância de banco de dados **Multi-AZ** do Amazon RDS for MySQL.
+Nesta tarefa, você configurará e executará uma instância de banco de dados **Multi-AZ** do Amazon RDS for MySQL que vai criar 2 zonas.
 
-As implantações **Multi-AZ** do Amazon RDS proporcionam melhor disponibilidades e durabilidade para instâncias de banco de dados, o que as torna a solução ideal para cargas de trabalho de banco de dados de produção. Quando você provisiona uma instância de banco de dados Multi-AZ, o Amazon RDS cria automaticamente uma instância de banco de dados principal e replica os dados de maneira síncrona para uma instância de espera em uma zona de disponibilidade (AZ) diferente [isso responde a pergunta acima: Mas por que 2 zonas?, certo?
+As implantações **Multi-AZ** do Amazon RDS proporcionam melhor disponibilidades e durabilidade para instâncias de banco de dados, o que as torna a solução ideal para cargas de trabalho de banco de dados de produção. Quando você provisiona uma instância de banco de dados Multi-AZ, o Amazon RDS cria automaticamente uma instância de banco de dados principal e replica os dados de maneira síncrona para uma instância de espera em uma zona de disponibilidade (AZ) diferente [isso responde a pergunta acima: Mas por que 2 zonas?], certo?
 
-**Cuidado** >> RDS consome seus créditos, portanto, ao finalizar essa instrução, **suspenda-o** caso esteja fazendo na raça do seu Leaner Lab. E você pode consultar o **AWS Cost Explorer** para saber dos custos.
+**Cuidado** >> RDS consome seus créditos, portanto, caso esteja fazendo essa instrução no Leaner Lab, **suspenda-o** quando finalizar as tarefas. E você pode consultar o **AWS Cost Explorer** para saber dos custos. Mas como estamos fazendo no laboratório pré-configura do Módulo 8, tudo será desligado assim que você fechar seu navegador.
 
 **(a)** No painel de navegação esquerdo, clique em **Banco de dados**.
 
@@ -155,7 +159,7 @@ Se aparecer esse alerta *Switch to the new database creation flow* (alternar par
 
 **- (g.11)** Pule alguns campos até chegar no campo a seguir.
 
-**- (g.12)** Desmarque **Habilitar monitoramento avançado** (Habilitar monitoramento aprimorado).
+**- (g.12)** Confirme se está desmarque **Habilitar monitoramento avançado**.
 
 **- (g.13)** Expanda  **Configuração Adicional**. Mas atenção! É o Configuração Adicional logo abaixo do Monitoramento, OK?
 
@@ -167,7 +171,12 @@ Isso desativará os backups, o que normalmente não é recomendado, mas agilizar
 
 **(h)** Deixe tudo como está até o fim, e clique no botão laranja **Criar banco de dados**. Seu banco de dados agora será executado.
 
-Caso apareça algumas telas de configurações extras ou sugestões, ignore-as!
+Caso apareça algumas telas de configurações extras ou sugestões como a figura a seguir, ignore-as!
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RDS/blob/main/imgs/sugestao_ignorar.png">
+   <img alt="Sugestão Ignoradas" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/sugestao_ignorar.png)">
+</picture>
 
 Parece que nada aconteceu, mas se você subir sua tela até o top, verá uma faixa verde indicando sucesso na sua criação do banco de dados AWS RDS.
 
