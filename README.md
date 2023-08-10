@@ -56,9 +56,9 @@ Depois de concluir este laboratório, você será capaz de:
 
 **- (b.3)** Em **Descrição**: **Permite acesso do grupo de seguranca Web** (não use ç)
 
-**- (b.4)** Em **VPC**: escolha Lab VPC. Mas se não existir essa opção é porque você está usando o Leaner Lab e o correto é você está no Módulo 8 do curso AWS Academy Foundation.
+**- (b.4)** Em **VPC**: escolha Lab VPC. Mas se não existir essa opção é porque você está usando o Leaner Lab e o correto é você está no Módulo 8 do curso AWS Academy Foundation, porque a AWS já preparou algumas pré-configurações para você usar. Essas pré-configurações são do EC2. Note que nessa instrução, não estamos subindo o EC2 manualmente, e sim, herdando...
 
-Na mesma tela (não saia daquela tela) você adicionará uma regra ao grupo de segurança para permitir solicitações de entrada do banco de dados.
+Na mesma tela (não saia daquela tela) você adicionará uma regra ao grupo de segurança para permitir solicitações de **entrada** do banco de dados.
 
 **(c)** Logo abaixo, tem **Regras de entrada**, e ele deve estar vazio. Nessa etapa, clique em **Adicionar regra** para adicionar uma regra para permitir acesso pelo **Grupo de segurança da Web**. Defina as seguintes configurações:
 
@@ -79,7 +79,9 @@ Você usará esse grupo de segurança ao executar o banco de dados do Amazon RDS
 # Passo 02 - Criar um grupo de sub-redes de banco de dados
 ## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8. Fica de olho no cronômetro do laboratório.
 
-Nesta tarefa, você criará um grupo de sub-redes de banco de dados, que é usado para informar ao RDS quais sub-redes podem ser usadas com o banco de dados. Volte na arquitetura (desenho inicial daqui dessa instrução) para entender onde vão as sub-redes. Cada grupo de sub-redes de banco de dados requer sub-redes em pelo menos duas zonas de disponibilidade (de novo, observe a arquitetura inicial, que há 2 zonas A e B).
+Nesta tarefa, você criará um grupo de sub-redes de banco de dados e amarrar ao grupo de segurança que acabou de criar na etapa anterior, isto é, vamos informar ao RDS quais sub-redes podem se conectar a ele. Em outras palavras, quais sub-redes podem usar o banco de dados. 
+
+Volte na arquitetura (desenho inicial daqui dessa instrução) para entender onde vão as sub-redes. Cada grupo de sub-redes de banco de dados requer sub-redes em pelo menos duas zonas de disponibilidade (de novo, observe a arquitetura inicial, que há 2 zonas A e B). Essa regra é uma regra da Multi-AZ da AWS.
 
 **(a)** No menu **Serviços** do console AWS, digite ou clique em **RDS**.
 
