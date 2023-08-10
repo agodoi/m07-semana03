@@ -184,6 +184,13 @@ E você verá uma faixa azul indicando que o seu banco de dados **lab-db** está
 
 Quando a faixa azul ficar verde, significa que seu banco **lab-db** está pronto.
 
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RDS/blob/main/imgs/banco_sucesso.png">
+   <img alt="Sugestão Ignoradas" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/banco_sucesso.png)">
+</picture>
+
+
 **(i)** Role para baixo até a seção **Segurança e Conexão** e copie o campo **Endpoint**. Ele será semelhante a: **lab-db.css9whrgr6ve.us-east-1.rds.amazonaws.com**
 
 Cole o valor do endpoint em um editor de texto. Você o usará isso mais tarde aqui no laboratório.
@@ -194,7 +201,7 @@ Cole o valor do endpoint em um editor de texto. Você o usará isso mais tarde a
 
 Nesta tarefa, você abrirá uma aplicação Web em execução no servidor da Web e o configurará para usar o banco de dados.
 
-**(a)** Você precisa pegar o endereço IP do WebServer já pré-criado pela AWS. Para isso, clique no botão suspenso **Details** na sua tela onde começou o Lab Módulo 8 e, em seguida, clique em **Show**. Você vai ver um IP do tipo: 52.55.160.157, mas não será esse, obviamente!
+**(a)** Você precisa pegar o endereço IP do WebServer já pré-criado pela AWS. Para isso, vá em EC2 no console e pegue o endereço IP4 público. Geralmente é um IP Classe A (que pode estar na faixa de 1 a 127 no primeiro octeto).
 
 **(b)** Abra uma nova guia do navegador Web, cole o endereço IP de WebServer [enter]. A aplicação Web será exibida com informações sobre a instância do EC2 (figura a seguir). Se sua rede local bloquear essa etapa, roteie o sinal WiFi do seu celular para resolver e fique tranquilo que seu laboratório não será encerrado, desde que você não atualize nenhuma página enquanto chaveia o seu WiFi para o seu celular.
 
@@ -215,7 +222,14 @@ Nesta tarefa, você abrirá uma aplicação Web em execução no servidor da Web
 
 **- (c.5):** Clique no botão **Submit**
 
-Uma mensagem será exibida explicando que a aplicação está executando um comando para copiar informações para o banco de dados. Após alguns segundos, a aplicação exibirá um [Address Book] (Catálogo de endereços).
+Uma mensagem será exibida explicando que a aplicação está executando um comando para copiar informações para o banco de dados. Após alguns segundos, a aplicação exibirá um [Address Book] (Catálogo de endereços). Veja a figura abaixo. Você deve observar algo semelhante.
+
+
+<picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RDS/blob/main/imgs/resultadofinal.png">
+   <img alt="Aplicação Final" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/resultadofinal.png)">
+</picture>
+
 
 A aplicação Address Book (Catálogo de endereços) está usando o banco de dados do RDS para armazenar informações.
 
