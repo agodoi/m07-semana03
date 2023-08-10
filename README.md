@@ -22,7 +22,7 @@ Depois de concluir este laboratório, você será capaz de:
   
 * Não use o seu Leaner Lab porque ele não estará com as pré-configurações necessárias. Depois a gente vai falar mais sobre isso.
   
-* Sinto lhe informar, mas se demorar muito nessa atividade, a sessão vai se encerrar e todo o trabalho será perdido. Então vamos fazer uma overview primeiro antes de começar as configurações. Teremos 90min para concluir essa instrução antes de cair tudo.
+* Sinto lhe informar, mas se demorar muito nessa atividade, a sessão vai se encerrar e todo o trabalho será perdido. Então vamos fazer uma overview primeiro antes de começar as configurações. Teremos 90min para concluir essa instrução antes de tudo cair.
 
 # Arquitetura inicial
 
@@ -39,8 +39,7 @@ Depois de concluir este laboratório, você será capaz de:
 </picture>
 
 # Passo-01: Criar um grupo de segurança no RDS
-
-## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8.
+## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8. Fica de olho no cronômetro do laboratório [máx. 90min].
 ## Mas antes de começar, pense! Por que o primeiro passo é criar um grupo de segurança?
 
 [resposta](https://github.com/agodoi/EC2-RDS/blob/main/resposta1)
@@ -77,7 +76,7 @@ Isso configura o grupo de segurança de banco de dados para permitir tráfego de
 Você usará esse grupo de segurança ao executar o banco de dados do Amazon RDS.
 
 # Passo 02 - Criar um grupo de sub-redes de banco de dados
-## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8. Fica de olho no cronômetro do laboratório.
+## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8. Fica de olho no cronômetro do laboratório [máx. 90min].
 
 Nesta tarefa, você criará um grupo de sub-redes de banco de dados e amarrar ao grupo de segurança que acabou de criar na etapa anterior, isto é, vamos informar ao RDS quais sub-redes podem se conectar a ele. Em outras palavras, quais sub-redes podem usar o banco de dados. 
 
@@ -113,7 +112,7 @@ Importantíssimo!!! Seu RDS *não está com entrada 0.0.0.0/0* que significa qua
 
 
 # Passo 03: Criar uma instância de banco de dados do Amazon RDS
-## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8. Fica de olho no cronômetro do laboratório.
+## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8. Fica de olho no cronômetro do laboratório [máx. 90min].
 
 Nesta tarefa, você configurará e executará uma instância de banco de dados **Multi-AZ** do Amazon RDS for MySQL que vai criar 2 zonas.
 
@@ -197,7 +196,7 @@ Cole o valor do endpoint em um editor de texto. Você o usará isso mais tarde a
  
 
 # Passo-04: Interagir com seu banco de dados
-## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8. Fica de olho no cronômetro do laboratório.
+## Atenção: essa etapa será perdida ao encerrar sua sessão no laboratório do Módulo 8. Fica de olho no cronômetro do laboratório [máx. 90min].
 
 Nesta tarefa, você abrirá uma aplicação Web em execução no servidor da Web e o configurará para usar o banco de dados.
 
@@ -224,12 +223,10 @@ Nesta tarefa, você abrirá uma aplicação Web em execução no servidor da Web
 
 Uma mensagem será exibida explicando que a aplicação está executando um comando para copiar informações para o banco de dados. Após alguns segundos, a aplicação exibirá um [Address Book] (Catálogo de endereços). Veja a figura abaixo. Você deve observar algo semelhante.
 
-
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RDS/blob/main/imgs/resultadofinal.png">
    <img alt="Aplicação Final" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/resultadofinal.png)">
 </picture>
-
 
 A aplicação Address Book (Catálogo de endereços) está usando o banco de dados do RDS para armazenar informações.
 
