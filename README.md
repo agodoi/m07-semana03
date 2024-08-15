@@ -226,11 +226,11 @@ Nesta tarefa, você abrirá uma aplicação Web em execução no servidor da Web
 
 **- (a):** Endpoint: cole o endpoint que você copiou em um editor de texto anteriormente (Passo-03 etapa (i))
 
-**- (b):** Database: **lab** (nome que você deu no Passo 3.7 letra n)
+**- (b):** Database: **lab** (nome que você deu no **Passo 3.7 letra n**)
 
-**- (c):** Username: **admin** (nome que você deu no Passo 3.7 etapa a)
+**- (c):** Username: **admin** (nome que você deu no **Passo 3.7 etapa a**)
 
-**- (d):** Password: **lab12345** (senha que você deu no Passo 3.7 etapa c)
+**- (d):** Password: **lab12345** (senha que você deu no **Passo 3.7 etapa c**)
 
 **- (e):** Clique no botão **Submit** ou **Enviar**
 
