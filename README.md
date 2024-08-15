@@ -224,7 +224,7 @@ Nesta tarefa, você abrirá uma aplicação Web em execução no servidor da Web
 
 **(4.3)** Clique no botão RDS da aplicação (na parte superior da página). Agora, você configurará a aplicação para se conectar ao banco de dados. Defina as seguintes configurações:
 
-**- (a):** Endpoint: cole o endpoint que você copiou em um editor de texto anteriormente (Passo-03 etapa (i))
+**- (a):** Endpoint: cole o endpoint que você copiou em um editor de texto anteriormente (**Passo 3.9**)
 
 **- (b):** Database: **lab** (nome que você deu no **Passo 3.7 letra n**)
 
@@ -244,7 +244,7 @@ Uma mensagem será exibida explicando que a aplicação está executando um coma
 A aplicação Address Book (Catálogo de endereços) está usando o banco de dados do RDS para armazenar informações.
 
 **(4.4)** Adicione, edite e remova contatos para testar o aplicativo web.
-
+.
 Os dados estão sendo mantidos no banco de dados e são replicados automaticamente para a segunda zona de disponibilidade.
 
 
