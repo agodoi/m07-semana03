@@ -157,7 +157,7 @@ Se aparecer esse alerta *Switch to the new database creation flow* (alternar par
 
 **- (e)** Em **Configuração da instância**, deixe como **classes com capacidade de intermitência (inclui classes t)** e selecione **db.t3.micro**
 
-**- (f)** Em **Armazenamento**, deixe como **SSD de uso geral (gp2)**, e em **armazenamento alocado** deixe **20 GB**
+**- (f)** Em **Armazenamento**, deixe como **SSD de uso geral (gp3)**, e em **armazenamento alocado** deixe **20 GB**
 
 **- (g)** Em **Escalabilidade**, deixe tudo como está. Note que seu banco poderá armazenar até 1000GB .
 
