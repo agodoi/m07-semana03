@@ -60,14 +60,14 @@ Depois de concluir este laboratório, você será capaz de:
   
 * Sinto lhe informar, mas se demorar muito nessa atividade, a sessão vai se encerrar e todo o trabalho será perdido. Então vamos fazer uma overview primeiro antes de começar as configurações. Teremos 90min para concluir essa instrução antes de tudo cair.
 
-## Arquitetura inicial
+## Arquitetura básica e inicial
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RDS/blob/main/imgs/lab-5-starting-lab-architecture.png">
    <img alt="Arquitetura Inicial" src="[YOUR-DEFAULT-IMAGE](https://github.com/agodoi/EC2-RDS/blob/main/imgs/lab-5-starting-lab-architecture.png)">
 </picture>
 
-## Arquitetura final
+## Arquitetura final e profissa
 
 <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/agodoi/EC2-RDS/blob/main/imgs/lab-5-final-lab-architecture.png">
