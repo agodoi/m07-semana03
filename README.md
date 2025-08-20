@@ -18,6 +18,31 @@ Ele oferece capacidade econômica e redimensionável enquanto gerencia [tarefas 
 
 O Amazon RDS fornece seis opções de mecanismos de banco de dados familiares: Amazon Aurora, Oracle, Microsoft SQL Server, PostgreSQL, MySQL e MariaDB. Mas hoje, vamos focar no **MySQL**
 
+
+## E o que o EC2 está fazendo aqui?
+
+O EC2 é a aplicação que consome o banco do RDS, pois o RDS é só o banco gerenciado (não roda sua aplicação).
+
+Portanto, o EC2 serve como servidor de aplicação (ex.: Flask, Node.js, Java, PHP, Django).
+
+**O fluxo típico é:** usuário → navegador → EC2 (aplicação web/API) → RDS (dados).
+
+Exemplo: você hospeda um site no Apache/Nginx no EC2, e esse site consulta o MySQL no RDS.
+
+Muitas vezes você não quer expor o RDS à internet (por segurança).
+
+Nesse caso, sobe um EC2 na mesma VPC/Subnet e o usa como jump host para administração e importação de dados:
+
+- rodar mysql CLI;
+- executar scripts de carga de dados;
+- usar ferramentas de ETL/Migração;
+- Imagine que você recebe arquivos CSV, JSON ou logs. O EC2 pode baixar/processar/transformar esses dados, depois inserir no RDS;
+- EC2 e RDS ficam na mesma VPC, a comunicação acontece via endereço privado, não passa pela internet;
+- Security Group do RDS permite acesso somente ao SG do EC2.
+- Isso reduz drasticamente exposição do banco.
+
+Assim, você conecta primeiro no EC2 (SSH) e de lá acessa o RDS, sem abrir o banco para o mundo.
+
 ## Objetivos
 
 Depois de concluir este laboratório, você será capaz de:
