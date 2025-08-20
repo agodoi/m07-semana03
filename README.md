@@ -6,9 +6,9 @@ Iremos apresentar os métodos para modelagem de banco de dados relacional.
 
 Este laboratório foi criado para reforçar o conceito de utilização de uma instância de banco de dados gerenciado pela AWS para atender as necessidades de banco de dados relacional.
 
-## Qual impacto no projeto da Vivo?
+## Qual impacto no projeto atual?
 
-A aula de hoje representa um dos primeiros passos da arquitetura de nuvem para resolver o problema do estoque de telefones, que certamente passará por um banco de dados relacional escalável, disponível
+A aula de hoje representa um dos primeiros passos da arquitetura de nuvem para resolver o problema da venda de ingressos, que certamente passará por um banco de dados relacional escalável e disponível.
 
 ## O que é um RDS?
 
@@ -22,7 +22,7 @@ O Amazon RDS fornece seis opções de mecanismos de banco de dados familiares: A
 
 Depois de concluir este laboratório, você será capaz de:
 
-* Ter insights para o seu projeto da Vivo, em como criar um banco de estoque de telefones;
+* Ter insights para o seu projeto da venda de ingressos, em como criar um banco de com dados de vendas;
 * Executar uma instância de banco de dados do Amazon RDS com alta disponibilidade.
 * Configurar a instância de banco de dados para permitir conexões do seu servidor web.
 * Abrir um aplicativo web e interagir com seu banco de dados.
