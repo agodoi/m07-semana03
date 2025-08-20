@@ -33,9 +33,9 @@ Muitas vezes você não quer expor o RDS à internet (por segurança).
 
 Nesse caso, sobe um EC2 na mesma VPC/Subnet e o usa como jump host para administração e importação de dados:
 
-- rodar mysql CLI;
-- executar scripts de carga de dados;
-- usar ferramentas de ETL/Migração;
+- Você pode rodar mysql CLI, isto é, dar comandos mysql no terminal;
+- Você pode executar scripts de carga de dados;
+- Você pode usar ferramentas de ETL/Migração;
 - Imagine que você recebe arquivos CSV, JSON ou logs. O EC2 pode baixar/processar/transformar esses dados, depois inserir no RDS;
 - EC2 e RDS ficam na mesma VPC, a comunicação acontece via endereço privado, não passa pela internet;
 - Security Group do RDS permite acesso somente ao SG do EC2.
